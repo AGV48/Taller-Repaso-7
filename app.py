@@ -35,6 +35,4 @@ print(conjunto2.lista_elementos)
 lista = conjunto + conjunto2
 print(lista)
 
-conjunto.intersectar(conjunto, conjunto2)
-
 
