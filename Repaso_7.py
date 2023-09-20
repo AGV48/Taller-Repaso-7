@@ -25,9 +25,7 @@ class Conjunto:
         return self.__id
     
     def contiene(self, obj: Elemento) -> bool:
-        for elemento in self.lista_elementos:
-            return elemento == obj
-        return False
+        return any(e == elemento for e in self.elementos)
     
     def agregar_elemento(self, obj: Elemento):
         if not self.contiene(obj):
@@ -41,7 +39,7 @@ class Conjunto:
             nuevo_conjunto.agregar_elemento(elemento)
         return nuevo_conjunto
     
-
+@classmethod
     def intersectar(cls, c1, c2):
         interseccion = [elemento for elemento in c1.lista_elementos if c2.lista_elementos.contiene(elemento)]
         conjunto_interseccion = Conjunto(f"{c1.nombre} INTERSECTADO {c2.nombre}")
